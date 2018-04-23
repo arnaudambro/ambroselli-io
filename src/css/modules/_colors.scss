@@ -1,0 +1,62 @@
+:root {
+
+  /*------------------------------------*\
+      COLORS
+  \*------------------------------------*/
+  // --white: rgba(250,250,250,1);
+  // --transWhite: rgba(250,250,250,0.6);
+  // --black: rgba(26,26,26,1);
+  // --transBlack: rgba(26,26,26,0.6);
+  // --darkGrey: rgba(100,100,100,1);
+  // --gold: rgba(136,117,82,1.00);
+  
+  // --bgColor: var(--black);
+  // --transBgColor: var(--transBlack);
+
+  // --loadingFontColor: var(--mainFontColor);
+  // --mainFontColor: var(--gold);
+  // --buttonColor: var(--mainFontColor);
+  // --descColor: var(--gold);
+
+}
+
+
+.button__color {
+  --size: 20px;
+
+  z-index: var(--zMenu);
+  grid-area: topMenu;
+  justify-self: end;
+  align-self: center;
+  display: flex;
+  
+  justify-content: space-around;
+  //align-items: center;
+  //align-content: center;
+  
+  width: calc((var(--size) + 2px) * 3);
+  height: calc(var(--size) + 2px);
+
+
+  &--bgcolor {
+
+    height: calc(var(--size) + 2px);
+    width: calc(var(--size) + 2px);
+    display: grid;
+
+    border: 1px solid var(--mainFontColor);
+    border-radius: 50%;
+    cursor: pointer;
+    
+  }
+
+  &--maincolor {
+
+    justify-self: center;
+    align-self: center;
+    height: calc(var(--size) * 0.4);
+    width: calc(var(--size) * 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

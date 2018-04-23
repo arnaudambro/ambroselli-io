@@ -1,0 +1,72 @@
+.brach {
+  @media all and (min-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/brach-presite/brach-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/brach-presite/brach-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/brach-presite/brach-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/brach-presite/brach-bottom-right.png) !important}
+  }
+  @media all and (max-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/brach-presite/brach-top-left-small.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/brach-presite/brach-bottom-left-small.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/brach-presite/brach-top-right-small.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/brach-presite/brach-bottom-right-small.png) !important}
+  }
+}
+.vernet {
+  @media all and (min-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/vernet/vernet-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/vernet/vernet-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/vernet/vernet-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/vernet/vernet-bottom-right.png) !important}
+  }
+  @media all and (max-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/vernet/vernet-top-left-small.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/vernet/vernet-bottom-left-small.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/vernet/vernet-top-right-small.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/vernet/vernet-bottom-right-small.png) !important}
+  }
+}
+
+.adt {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/adt/adt-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/adt/adt-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/adt/adt-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/adt/adt-bottom-right.png) !important}
+}
+
+.argos {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/argos/argos-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/argos/argos-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/argos/argos-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/argos/argos-bottom-right.png) !important}
+}
+
+.ambroselli.black {
+  @media all and (min-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/ambroselli-io/ambroselli-white-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/ambroselli-io/ambroselli-white-bottom-right.png) !important}
+  }
+  @media all and (max-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-left-small.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/ambroselli-io/ambroselli-white-bottom-left-small.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-right-small.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/ambroselli-io/ambroselli-white-bottom-right-small.png) !important}
+  }
+}
+
+.ambroselli.white {
+  @media all and (min-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-black-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/ambroselli-io/ambroselli-black-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/ambroselli-io/ambroselli-black-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/ambroselli-io/ambroselli-black-bottom-right.png) !important}
+  }
+  @media all and (max-width: 1000px) {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-black-top-left-small.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/ambroselli-io/ambroselli-black-bottom-left-small.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/ambroselli-io/ambroselli-black-top-right-small.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/ambroselli-io/ambroselli-black-bottom-right-small.png) !important}
+  }
+}

@@ -1,0 +1,71 @@
+.menu {
+  &__item {
+    align-self: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    --sideMargin: -1vw;
+    &--top {
+      z-index: var(--zMenu);
+      grid-area: topMenu;
+      margin-left: var(--sideMargin);
+      justify-self: start;
+
+    }
+    &--bottom {
+      z-index: var(--zMenu);
+      grid-area: bottomMenu;
+      margin-right: var(--sideMargin);
+      justify-self: end;
+    }
+  }
+  &__arrow {
+    z-index: var(--zMenu);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform calc(var(--transitionDuration) * 1s) ease-in-out;
+    svg {
+      height: 30px;
+      width: 14px;
+    }
+
+    path {
+      fill: var(--mainFontColor);
+      stroke: var(--mainFontColor);
+      transition: all calc(var(--transitionDuration) * 1s) ease-in-out;
+
+    }
+
+    &.fade-out {
+      opacity: 0;
+      pointer-events: none;
+      cursor: auto;
+    }
+
+    &--arrowLeft {
+      padding-right: 3vw;
+      grid-area: arrowLeft;
+      transition: all calc(var(--transitionDuration) * 1s) ease-in-out;
+      @media all and (min-width: 1000px) {
+        &:hover {
+          transform: translateX(-20px);
+        }
+      }
+    }
+    &--arrowRight {
+      padding-left: 3vw;
+      grid-area: arrowRight;
+      transition: all calc(var(--transitionDuration) * 1s) ease-in-out;
+      @media all and (min-width: 1000px) {
+        &:hover {
+          transform: translateX(20px);
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,503 @@
+.logo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &.loading-grouped {
+    animation: calc(var(--transitionDuration) * 1000ms) goToRight calc(var(--leavingTimeOut) * 1000ms) linear forwards;
+    @keyframes goToRight {
+      20% {
+        transform: skew(20deg, 0deg) translateX(-10px);
+        // transform: skew(20deg, 0deg);
+      }
+      100% {
+        transform: skew(20deg, 0deg) translateX(100vw);
+        // transform: skew(20deg, 0deg);
+      }
+    }
+  }
+
+  &.separated {
+  }
+
+  &__letter {
+    --width: 6vw;
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    /***** MASK ****/
+    &--mask {
+      /*------------------------------------*\
+          GLOBAL
+      \*------------------------------------*/
+      --animDuration: calc(var(--writingDuration) * 1000ms);
+      --totalStroke: calc(var(--strokeA) + var(--strokeM) + var(--strokeB1) + var(--strokeB2) + var(--strokeR) + var(--strokeO) + var(--strokeS) + var(--strokeE1) + var(--strokeE2) + var(--strokeE3) + var(--strokeL) + var(--strokeL) + var(--strokeI1) + var(--strokeI2) + var(--strokeI3) + var(--strokeDot) + var(--strokeI1) + var(--strokeI2) + var(--strokeI3) + var(--strokeO));
+      /*------------------------------------*\
+          STROKE
+      \*------------------------------------*/
+      --strokeA: 80;
+      --strokeM: 70;
+      --strokeB1: 21;
+      --strokeB2: 62;
+      --strokeR: 65;
+      --strokeO: 55;
+      --strokeS: 54;
+      --strokeE1: 41;
+      --strokeE2: 18;
+      --strokeE3: 19;
+      --strokeL: 41;
+      --strokeI1: 20;
+      --strokeI2: 23;
+      --strokeI3: 20;
+      --strokeDot: 5;
+      /*------------------------------------*\
+          DURATION
+      \*------------------------------------*/
+      --durationA: calc(var(--strokeA) / var(--totalStroke) * var(--animDuration));
+      --durationM: calc(var(--strokeM) / var(--totalStroke) * var(--animDuration));
+      --durationB1: calc(var(--strokeB1) / var(--totalStroke) * var(--animDuration));
+      --durationB2: calc(var(--strokeB2) / var(--totalStroke) * var(--animDuration));
+      --durationR: calc(var(--strokeR) / var(--totalStroke) * var(--animDuration));
+      --durationO: calc(var(--strokeO) / var(--totalStroke) * var(--animDuration));
+      --durationS: calc(var(--strokeS) / var(--totalStroke) * var(--animDuration));
+      --durationE1: calc(var(--strokeE1) / var(--totalStroke) * var(--animDuration));
+      --durationE2: calc(var(--strokeE2) / var(--totalStroke) * var(--animDuration));
+      --durationE3: calc(var(--strokeE3) / var(--totalStroke) * var(--animDuration));
+      --durationL: calc(var(--strokeL) / var(--totalStroke) * var(--animDuration));
+      --durationI1: calc(var(--strokeI1) / var(--totalStroke) * var(--animDuration));
+      --durationI2: calc(var(--strokeI2) / var(--totalStroke) * var(--animDuration));
+      --durationI3: calc(var(--strokeI3) / var(--totalStroke) * var(--animDuration));
+      --durationDot: calc(var(--strokeDot) / var(--totalStroke) * var(--animDuration));
+      /*------------------------------------*\
+          DELAY
+      \*------------------------------------*/
+      /***** LETTER A ***/
+      --delayA: calc(0s);
+      /***** LETTER M ***/
+      --delayM: calc(var(--durationA));
+      /***** LETTER B - FIRST PART ***/
+      --delayB1: calc(var(--delayM) + var(--durationM));
+      /***** LETTER B - SECOND PART ***/
+      --delayB2: calc(var(--delayB1) + var(--durationB1));
+      /***** LETTER R ***/
+      --delayR: calc(var(--delayB2) + var(--durationB2));
+      /***** LETTER O1 ***/
+      --delayO_1: calc(var(--delayR) + var(--durationR));
+      /***** LETTER S ***/
+      --delayS: calc(var(--delayO_1) + var(--durationO));
+      /***** LETTER E - FIRST PART ***/
+      --delayE1: calc(var(--delayS) + var(--durationS));
+      /***** LETTER E - SECOND PART ***/
+      --delayE2: calc(var(--delayE1) + var(--durationE1));
+      /***** LETTER E - THIRD PART ***/
+      --delayE3: calc(var(--delayE2) + var(--durationE2));
+      /***** LETTER L1 ***/
+      --delayL1: calc(var(--delayE3) + var(--durationE3));
+      /***** LETTER L2 ***/
+      --delayL2: calc(var(--delayL1) + var(--durationL));
+      /***** LETTER I1 - FIRST PART ***/
+      --delayI1_1: calc(var(--delayL2) + var(--durationL));
+      /***** LETTER I1 - SECOND PART ***/
+      --delayI2_1: calc(var(--delayI1_1) + var(--durationI1));
+      /***** LETTER I1 - THIRD PART ***/
+      --delayI3_1: calc(var(--delayI2_1) + var(--durationI2));
+      /***** DOT ***/
+      --delayDot: calc(var(--delayI3_1) + var(--durationI3));
+      /***** LETTER I1 - FIRST PART ***/
+      --delayI1_2: calc(var(--delayDot) + var(--durationDot));
+      /***** LETTER I1 - SECOND PART ***/
+      --delayI2_2: calc(var(--delayI1_2) + var(--durationI1));
+      /***** LETTER I1 - THIRD PART ***/
+      --delayI3_2: calc(var(--delayI2_2) + var(--durationI2));
+      /***** LETTER O2 ***/
+      --delayO_2: calc(var(--delayI3_2) + var(--durationI3));
+
+
+      overflow: hidden;
+      display: block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      // border: 1px solid #000;
+
+      &-a {
+        width: calc(var(--width) *200 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -57 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *300 / 200);
+        }
+      }
+      &-m {
+        width: calc(var(--width) *260 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -16 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *292 / 200);
+        }      
+      }
+      &-b {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -52 / 200);
+          margin-top: calc(var(--width) * -40 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-r {
+        width: calc(var(--width) *165 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -61 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *285 / 200);
+        }
+      }
+      &-o {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -49 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *285 / 200);
+        }
+      }
+      &-s {
+        width: calc(var(--width) *181 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -53 / 200);
+          margin-top: calc(var(--width) * -43 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-e {
+        width: calc(var(--width) *175 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -60 / 200);
+          margin-top: calc(var(--width) * -55 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-l {
+        width: calc(var(--width) *164 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -62 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      &-i {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -53 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      &-dot {
+        width: calc(var(--width) *55 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -128 / 200);
+          margin-top: calc(var(--width) * -77 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      path.stroke {
+        stroke: var(--loadingFontColor);
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      path#a {
+        stroke-dasharray: var(--strokeA);
+        stroke-dashoffset: var(--strokeA);
+        stroke-width: 6;
+        animation: dash var(--durationA) linear forwards;
+      }
+      path#m{
+        stroke-dasharray: var(--strokeM);
+        stroke-dashoffset: var(--strokeM);
+        stroke-width: 9;
+        animation: dash var(--durationM) linear var(--delayM) forwards;
+      }
+      path#b1{
+        stroke-dasharray: var(--strokeB1);
+        stroke-dashoffset: var(--strokeB1);
+        stroke-linecap: butt;
+        stroke-width: 6;
+        animation: dash var(--durationB1) linear var(--delayB1) forwards;
+      }
+      path#b2{
+        stroke-dasharray: var(--strokeB2);
+        stroke-dashoffset: var(--strokeB2);
+        stroke-linecap: butt;
+        stroke-width: 8;
+        animation: dash var(--durationB2) linear var(--delayB2) forwards;
+      }
+      path#r{
+        stroke-dasharray: var(--strokeR);
+        stroke-dashoffset: var(--strokeR);
+        stroke-width: 6.5;
+        animation: dash var(--durationR) linear var(--delayR) forwards;
+      }
+      &-o1 {
+        path#o{
+        stroke-dasharray: var(--strokeO);
+        stroke-dashoffset: var(--strokeO);
+        stroke-width: 8;
+        animation: dash var(--durationO) linear var(--delayO_1) forwards;
+        }
+      }
+      path#s{
+        stroke-dasharray: var(--strokeS);
+        stroke-dashoffset: var(--strokeS);
+        stroke-width: 6;
+        animation: dash var(--durationS) linear var(--delayS) forwards;
+      }
+      path#e1{
+        stroke-dasharray: var(--strokeE1);
+        stroke-dashoffset: var(--strokeE1);
+        stroke-width: 6;
+        animation: dash var(--durationE1) linear var(--delayE1) forwards;
+      }
+      path#e2{
+        stroke-dasharray: var(--strokeE2);
+        stroke-dashoffset: var(--strokeE2);
+        stroke-width: 6;
+        animation: dash var(--durationE2) linear var(--delayE2) forwards;
+      }
+      path#e3{
+        stroke-dasharray: var(--strokeE3);
+        stroke-dashoffset: var(--strokeE3);
+        stroke-width: 6;
+        animation: dash var(--durationE3) linear var(--delayE3) forwards;
+      }
+      path#l{
+        stroke-dasharray: var(--strokeL);
+        stroke-dashoffset: var(--strokeL);
+        stroke-width: 7;
+      }
+      &-l1 {
+        > svg > path#l {
+          animation: dash var(--durationL) linear var(--delayL1) forwards;
+        }
+      }
+      &-l2 {
+        > svg > path#l {
+          animation: dash var(--durationL) linear var(--delayL2) forwards;
+        }
+      }
+      &-i1 {
+        path#i1{
+          stroke-dasharray: var(--strokeI1);
+          stroke-dashoffset: var(--strokeI1);
+          stroke-width: 5;
+          animation: dash var(--durationI1) linear var(--delayI1_1) forwards;
+        }
+        path#i2{
+          stroke-dasharray: var(--strokeI2);
+          stroke-dashoffset: var(--strokeI2);
+          stroke-width: 5;
+          animation: dash var(--durationI2) linear var(--delayI2_1) forwards;
+        }
+        path#i3{
+          stroke-dasharray: var(--strokeI3);
+          stroke-dashoffset: var(--strokeI3);
+          stroke-width: 5;
+          animation: dash var(--durationI3) linear var(--delayI3_1) forwards;
+        }
+      }
+      path#dot{
+        stroke-dasharray: var(--strokeL);
+        stroke-dashoffset: var(--strokeL);
+        stroke-width: 6;
+        animation: dash var(--durationDot) linear var(--delayDot) forwards;
+      }
+      &-i2 {
+        path#i1{
+          stroke-dasharray: var(--strokeI1);
+          stroke-dashoffset: var(--strokeI1);
+          stroke-width: 5;
+          animation: dash var(--durationI1) linear var(--delayI1_2) forwards;
+        }
+        path#i2{
+          stroke-dasharray: var(--strokeI2);
+          stroke-dashoffset: var(--strokeI2);
+          stroke-width: 5;
+          animation: dash var(--durationI2) linear var(--delayI2_2) forwards;
+        }
+        path#i3{
+          stroke-dasharray: var(--strokeI3);
+          stroke-dashoffset: var(--strokeI3);
+          stroke-width: 5;
+          animation: dash var(--durationI3) linear var(--delayI3_2) forwards;
+        }
+      }
+      &-o2 {
+        path#o{
+        stroke-dasharray: var(--strokeO);
+        stroke-dashoffset: var(--strokeO);
+        stroke-width: 8;
+        animation: dash var(--durationO) linear var(--delayO_2) forwards;
+        }
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      path#mask {
+        fill: var(--bgColor);
+      }
+    }
+    &.animated  {
+      // animation: 1.5s bounce linear forwards;
+      @keyframes bounce {
+        20% {
+          transform: scale(1.03);
+        }
+        40% {
+          transform: scale(0.97);
+        }
+        60% {
+          transform: scale(1.01);
+        }
+        80% {
+          transform: scale(0.99);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &--letter {
+
+      &-a {
+        width: calc(var(--width) *200 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -57 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *300 / 200);
+        }
+      }
+      &-m {
+        width: calc(var(--width) *260 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -16 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *292 / 200);
+        }      
+      }
+      &-b {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -52 / 200);
+          margin-top: calc(var(--width) * -40 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-r {
+        width: calc(var(--width) *165 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -61 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *285 / 200);
+        }
+      }
+      &-o {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -49 / 200);
+          margin-top: calc(var(--width) * -45 / 200);
+          height: calc(var(--width) *285 / 200);
+        }
+      }
+      &-s {
+        width: calc(var(--width) *181 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -53 / 200);
+          margin-top: calc(var(--width) * -43 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-e {
+        width: calc(var(--width) *175 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -60 / 200);
+          margin-top: calc(var(--width) * -55 / 200);
+          height: calc(var(--width) *290 / 200);
+        }
+      }
+      &-l {
+        width: calc(var(--width) *164 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -62 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      &-i {
+        width: calc(var(--width) *185 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -53 / 200);
+          margin-top: calc(var(--width) * -42 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      &-dot {
+        width: calc(var(--width) *55 / 200);
+        > svg {
+          margin-left: calc(var(--width) * -128 / 200);
+          margin-top: calc(var(--width) * -77 / 200);
+          height: calc(var(--width) *295 / 200);
+        }
+      }
+      > svg {
+        stroke: none;
+        fill: var(--loadingFontColor);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      rect.background {
+        display: none; 
+      }
+    }
+  }
+}
+
+.split {
+  transition: all calc(var(--transitionDuration) * 1s) cubic-bezier(1, 0.01, 0.82, 0.63) calc(var(--leavingTimeOut) * 1s);
+}
+.split-up {
+  transform: translateY(-100vh);
+}
+.split-left {
+  transform: translateX(-100vw);
+}
+.split-down {
+  transform: translateY(100vh);
+}
+.split-right {
+  transform: translateX(100vw);
+}
+.split-up-left {
+  transform: translate(-100vw, -100vh);
+}
+.split-up-right {
+  transform: translate(100vw, -100vh);
+}
+.split-down-left {
+  transform: translate(-100vw, 100vh);
+}
+.split-down-right {
+  transform: translate(100vw, 100vh);
+}
+
+

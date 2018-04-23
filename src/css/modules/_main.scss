@@ -1,0 +1,189 @@
+.main {
+  
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+  z-index: var(--zProjet);
+  position: relative;
+  &__projets {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &--hero {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      cursor: pointer;
+    }
+
+    &--left {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+    }
+
+    &--right {
+      grid-column: 2 / 3;
+      grid-row: 1 / -1;
+    }
+
+    &--content {
+      z-index: var(--zProjet);
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      transition: height calc(var(--transitionDuration) * 1s) ease-in-out;
+      &.active  {
+        height: 110%;
+      }
+    }
+
+    &--pic {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      
+      > * {
+        flex-grow: 1;
+        z-index: var(--zMenu);
+      }
+      
+      &-left-up {
+        grid-row: 1 / 2;
+        background-position: bottom right;
+      }
+      &-left-down {
+        grid-row: 2 / 3;
+        background-position: top right;
+      }
+      &-right-up {
+        grid-row: 1 / 2;
+        background-position: bottom left;
+      }
+      &-right-down {
+        grid-row: 2 / 3;
+        background-position: top left;
+      }
+    }
+
+    &--mask-center {
+      z-index: var(--zMaskCenter);
+      background-color: transparent;
+      box-shadow:  0 0 0 100vw var(--transBgColor);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    &--mask-bottom {
+      z-index: calc(var(--zMaskCenter) + 1);
+      grid-column: 1 / -1;
+      grid-row: 4 / -1;
+      background-color: var(--bgColor);
+      height: 100%;
+      width: 100%;
+    }
+
+    &--description {
+      --titleHeight: 100px;
+      --descHeight: 60px;
+      z-index: var(--zMainDesc);
+      width: 40%;
+      position: absolute;
+      display: grid;
+      grid-template-rows: 10px var(--titleHeight) var(--descHeight) 1px 39px 0px;
+      grid-template-columns: 10px 1fr 10px;
+      height: calc(10px + var(--titleHeight) + var(--descHeight) + 1px + 39px + 0px);
+      grid-template-areas: 
+      'paddingTop      paddingTop    paddingTop'
+      'paddingRight     title        paddingLeft' 
+      'paddingRight     description  paddingLeft' 
+      'paddingRight     divider      paddingLeft' 
+      'paddingRight     call         paddingLeft'
+      'paddingBot      paddingBot    paddingBot';
+      pointer-events: none;
+
+      background-color: var(--transBgColor);
+      // border: 1px groove var(--descColor);
+
+      font-size: calc(1rem + 2vw);
+      font-weight: 300;
+      line-height: 1em;
+      > * {
+        color: var(--descColor);
+      }
+      letter-spacing: 1px;
+      transition: opacity calc(var(--transitionDuration) * 1s) ease-out, transform calc(var(--transitionDuration) * 1s) ease-out;
+
+      @media all and (max-width: 1000px) {
+        --titleHeight: 100px;
+        transition: opacity calc(var(--transitionDuration) * 1s) ease-out;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        transform: translate(0,0) !important;
+        text-align: left !important;
+      }
+
+      > .title {
+        grid-area: title;
+      }
+      > .description {
+        font-size: 0.55rem;
+        line-height: 0.65rem;
+        font-weight: 100;
+        font-family: 'Encode Sans', sans-serif;
+        grid-area: description;
+      }
+
+
+      > .divider {
+        grid-area: divider;
+        width: 100%;
+        max-width: 0;
+        // margin-top: 30px;
+        transition: max-width calc(var(--transitionDuration) * 0.5s) ease-out;
+        background-color: var(--descColor);
+        height: 100%;
+        &.active {
+          max-width: 100%;
+          transition: max-width calc(var(--transitionDuration) * 0.5s) ease-out calc(var(--transitionDuration) * 0.5s);
+        }
+        @media all and (max-width: 1000px) {
+          transition: none;
+          max-width: 100%;
+        }
+      }
+
+      > .call-to-click {
+        grid-area: call;
+        align-self: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        width: 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: width calc(var(--transitionDuration) * 1s) ease-out;
+        // height: 100%;
+        &.active {
+          width: 100%;
+          transition: width calc(var(--transitionDuration) * 2s) ease-out calc(var(--transitionDuration) * 2s);
+        }
+        @media all and (max-width: 1000px) {
+          transition: none;
+          width: 100%;
+          text-align: right !important;
+        }
+      }
+
+    }
+  }
+}

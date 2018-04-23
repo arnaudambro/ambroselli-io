@@ -1,0 +1,34 @@
+/* https://codepen.io/anon/pen/vRbvNL */
+
+.full-size { 
+  height : 100%; 
+  width : 100%; 
+  position: absolute; 
+  top : 0; 
+  left : 0;
+}
+.blend-multiply {
+  mix-blend-mode : multiply;
+  z-index: 100;
+}
+
+.element-mask {
+  background-color: rgba(0,0,0,1)
+}
+
+.circle-follow {
+
+  position :absolute;
+  overflow : hidden;
+  background-color: rgba(255,255,255,1);
+  // width :320px; 
+  // height: 320px;
+  // top:calc( 50% - 160px); 
+  // left:calc( 50% - 160px); 
+  // border-radius: 160px;  
+  transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);  
+  opacity : 1; 
+  // pointer-events: none;
+}
+
+

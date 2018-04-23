@@ -1,0 +1,174 @@
+.content {
+  // background-color: var(--bgColor);
+  font-size: 6rem;
+  color: var(--mainFontColor);
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+
+  grid-template-columns: 1fr minmax(250px, 8fr) 1fr;
+
+  grid-template-rows: 3vh 2fr 70vh 2fr 3vh;
+  grid-template-areas: 
+  'paddingTop         paddingTop     paddingTop'
+  'marginTopLeft      topMenu        marginTopRight'
+  'arrowLeft          main           arrowRight' 
+  'marginBottomLeft   bottomMenu     marginBottomRight'
+  'paddingBottom      paddingBottom  paddingBottom';    
+
+}
+.grouped {
+  transform: translateX(-100vw);
+  animation: calc(var(--transitionDuration) * 1000ms) groupComeFromLeft linear forwards;
+  @keyframes groupComeFromLeft {
+    0% {
+      transform: skew(0deg, 0deg) translateX(-100vw);
+      transform-origin: bottom 15% right 10%;
+    }
+    20% {
+      transform: skew(0deg, 0deg) translateX(-100vw);
+    }
+    80% {
+      transform: skew(20deg, 0deg) translateX(-20px);
+    }
+    100% {
+      transform: skew(0deg, 0deg) translateX(0);
+    }
+  }
+}
+
+/*------------------------------------*\
+    ENTERING AND LEAVING
+\*------------------------------------*/
+
+
+/***************KEYFRAMES*****************/
+
+@keyframes enterFromUp {
+  0% {
+    transform: translate(0, -100vh);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes enterFromDown {
+  0% {
+    transform: translate(0, 100vh);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes enterFromRight {
+  0% {
+    transform: translate(100vw, 0);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes enterFromLeft {
+  0% {
+    transform: translate(-100vw, 0);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+/**************ENTERING**************/
+.enter-from-up {
+  animation: enterFromUp calc(var(--transitionDuration) * 1000ms) ease-in-out forwards;
+}
+.enter-from-down {
+  animation: enterFromDown calc(var(--transitionDuration) * 1000ms) ease-in-out forwards;
+}
+.enter-from-right {
+  animation: enterFromRight calc(var(--transitionDuration) * 1000ms) ease-in-out forwards;
+}
+.enter-from-left {
+  animation: enterFromLeft calc(var(--transitionDuration) * 1000ms) ease-in-out forwards;
+}
+
+
+/*------------------------------------*\
+    TRANSITING BETWEEN PROJECTS
+\*------------------------------------*/
+
+.explode-enter {
+  .transit-from-up,
+  .transit-from-down,
+  .transit-from-right,
+  .transit-from-left,
+  .main__projets--description {
+    opacity: 0;
+  }
+  .transit-from-up { transform: translate(0, -100vh); }
+  .transit-from-down { transform: translate(0, 100vh); }
+  .transit-from-right { transform: translate(100vw, 0); }
+  .transit-from-left { transform: translate(-100vw, 0); }
+}
+
+.explode-enter.explode-enter-active {
+  .transit-from-up,
+  .transit-from-down,
+  .transit-from-right,
+  .transit-from-left,
+  .main__projets--description {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all calc(var(--transitionDuration) * 1000ms) ease-in-out;
+  }
+}
+
+.explode-exit {
+  .transit-from-up,
+  .transit-from-down,
+  .transit-from-right,
+  .transit-from-left,
+  .main__projets--description {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.explode-exit.explode-exit-active {
+
+  .transit-from-up,
+  .transit-from-down,
+  .transit-from-right,
+  .transit-from-left,
+  .main__projets--description {
+    opacity: 0;
+    transition: all calc(var(--transitionDuration) * 1000ms) ease-in-out;
+  }
+  .transit-from-up { transform: translate(0, -100vh); }
+  .transit-from-down { transform: translate(0, 100vh); }
+  .transit-from-right { transform: translate(100vw, 0); }
+  .transit-from-left { transform: translate(-100vw, 0); }
+}
+
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity calc(var(--transitionDuration) * 1s) ease-in-out calc(var(--transitionDuration) * 1s);
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity calc(var(--transitionDuration) * 1s) ease-in-out;
+}
+

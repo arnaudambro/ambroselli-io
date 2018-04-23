@@ -1,0 +1,52 @@
+
+.choose-transition {
+  margin-top: 5vh;
+  display: grid;
+
+  font-family: 'My_Gotham', serif;
+
+  grid-template-columns: repeat(2, 160px);
+  grid-template-rows: repeat(2, 5vh);
+  grid-template-areas: 'question question' 'button1 button2';
+
+  justify-items: center;
+  align-items: center;
+
+  transition: opacity 0.25s;
+
+  &.no-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  &__question {
+    grid-area: question;
+    // margin-bottom: 5vh;
+
+  }
+
+  &__link {
+    &--separated {
+      grid-area: button2;
+
+    }
+
+    &--grouped {
+      grid-area: button1;
+    }
+
+    &--no-choice {
+      grid-row: -1 / 1;
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__button {
+    &::before {
+      transition: 
+        border-color 0s ease-out calc(var(--transitionDuration) * 1s),
+        width calc(var(--transitionDuration) * 1s) ease-out, // Width expands first
+        height calc(var(--transitionDuration) * 1s) ease-out; // And then height
+    }
+  }
+}
