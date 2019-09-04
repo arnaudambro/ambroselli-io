@@ -18,7 +18,6 @@
 // import ambroselli_white_top_right from '../img/projets/ambroselli-io/ambroselli-white-top-right.png';
 // import ambroselli_white_bottom_right from '../img/projets/ambroselli-io/ambroselli-white-bottom-right.png';
 
-
 const pictures = {
   vernet: {
     // topLeft: ambroselli_white_top_left,
@@ -26,7 +25,7 @@ const pictures = {
     // topRight: ambroselli_white_top_right,
     // bottomRight: ambroselli_white_bottom_right,
     name: 'Hôtel Vernet',
-    url: 'https://ambroselli.io/vernet/',
+    url: 'https://dev.ambroselli.io/vernet/',
     description: {
       __html: `- Développement front-end - SASS BEM (CSS Grid) + JS Vanilla (no jQuery)<br />
     - Gros effort de fluidité malgré les cinémagraphes qui ont tendance à ralentir les performance et dégrader l'expérience utilisateur<br />
@@ -56,23 +55,23 @@ const pictures = {
       __html: `- Développement front-end - SASS + JS Vanilla (no jQuery)<br />
     - Gros effort de fluidité pour atteindre le 60 FPS en transitions<br />`
     },
-    url: 'https://ambroselli.io/brach-hotel/',
+    url: 'https://dev.ambroselli.io/brach-hotel/',
     classes: 'brach '
   },
-  argos: {
-    // topLeft: ambroselli_white_top_left,
-    // bottomLeft: ambroselli_white_bottom_left,
-    // topRight: ambroselli_white_top_right,
-    // bottomRight: ambroselli_white_bottom_right,
-    name: 'Total - Challenge Argos',
-    description: {
-      __html: `- Premier projet
-    - Développement front-end - SASS + JS Vanilla (no jQuery)<br />
-    - Pas de framework ni de librairies pour tous les diaporamas : fait maison, made in ambroselli.io<br />`,
-    url: 'https://ambroselli.io/argos/'
-    },
-    classes: 'argos '
-  },
+  // argos: {
+  //   // topLeft: ambroselli_white_top_left,
+  //   // bottomLeft: ambroselli_white_bottom_left,
+  //   // topRight: ambroselli_white_top_right,
+  //   // bottomRight: ambroselli_white_bottom_right,
+  //   name: 'Total - Challenge Argos',
+  //   description: {
+  //     __html: `- Premier projet
+  //   - Développement front-end - SASS + JS Vanilla (no jQuery)<br />
+  //   - Pas de framework ni de librairies pour tous les diaporamas : fait maison, made in ambroselli.io<br />`,
+  //   url: 'https://dev.ambroselli.io/argos/'
+  //   },
+  //   classes: 'argos '
+  // },
   ambroselli: {
     // topLeft: ambroselli_white_top_left,
     // bottomLeft: ambroselli_white_bottom_left,
@@ -84,10 +83,23 @@ const pictures = {
     - Animations SVG<br />
     - Première utilisation de react-transition-group v2<br />`
     },
-    url: 'https://ambroselli.io/ambro/',
+    url: 'https://www.ambroselli.io/',
     classes: 'ambroselli '
   },
-
-}
+  'Librairie open-source npm react-swipe-to-delete-ios': {
+    // topLeft: ambroselli_white_top_left,
+    // bottomLeft: ambroselli_white_bottom_left,
+    // topRight: ambroselli_white_top_right,
+    // bottomRight: ambroselli_white_bottom_right,
+    name: 'react-swipe-to-delete-ios',
+    description: {
+      __html: `- Développement en React.js<br />
+    - Animations SVG<br />
+    - Première utilisation de react-transition-group v2<br />`
+    },
+    url: 'https://arnaudambro.github.io/react-swipe-to-delete-ios/',
+    classes: 'react-swipe-to-delete-ios '
+  }
+};
 
 export default pictures;

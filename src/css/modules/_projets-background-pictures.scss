@@ -41,6 +41,13 @@
     &.main__projets--pic-right-down {background-image: url(../img/projets/argos/argos-bottom-right.png) !important}
 }
 
+.react-swipe-to-delete-ios {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-bottom-right.png) !important}
+}
+
 .ambroselli.black {
   @media all and (min-width: 1000px) {
     &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-left.png) !important}

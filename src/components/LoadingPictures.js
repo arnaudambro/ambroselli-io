@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import vernet_top_left from '../img/projets/vernet/vernet-top-left.png';
@@ -45,85 +44,291 @@ import ambroselli_io_white_top_right from '../img/projets/ambroselli-io/ambrosel
 import ambroselli_io_white_top_right_small from '../img/projets/ambroselli-io/ambroselli-white-top-right-small.png';
 import ambroselli_io_white_bottom_right from '../img/projets/ambroselli-io/ambroselli-white-bottom-right.png';
 import ambroselli_io_white_bottom_right_small from '../img/projets/ambroselli-io/ambroselli-white-bottom-right-small.png';
-
-
+import react_swipe_to_delete_ios_bottom_right from '../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-bottom-right.png';
+import react_swipe_to_delete_ios_bottom_left from '../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-bottom-left.png';
+import react_swipe_to_delete_ios_top_left from '../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-top-left.png';
+import react_swipe_to_delete_ios_top_right from '../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-top-right.png';
 
 // import PropTypes from 'prop-types';
 
 class LoadingPictures extends React.Component {
-
   state = {
     load: 0,
     now: Date.now()
-  }
+  };
 
   handleLoad = () => {
     this.setState({ load: this.state.load + 1 });
     /*console.log(`picture ${this.state.load}:`, Date.now() - this.state.now);*/
-  }
+  };
   /*anyRef = React.createRef()*/
   /*anyFunction = (argument) => {}*/
 
   render() {
-
-    return(
-      <div className={``} style={{ position: 'absolute', visibility: 'hidden', zIndex: -10 }}>
-        {this.state.load === 0 && <img src={vernet_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 1 && <img src={vernet_top_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 2 && <img src={vernet_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 3 && <img src={vernet_bottom_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 4 && <img src={vernet_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 5 && <img src={vernet_top_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 6 && <img src={vernet_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 7 && <img src={vernet_bottom_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 8 && <img src={brach_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 9 && <img src={brach_top_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 10 && <img src={brach_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 11 && <img src={brach_bottom_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 12 && <img src={brach_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 13 && <img src={brach_top_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 14 && <img src={brach_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 15 && <img src={brach_bottom_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 16 && <img src={adt_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 17 && <img src={adt_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 18 && <img src={adt_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 19 && <img src={adt_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 20 && <img src={argos_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 21 && <img src={argos_top_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 22 && <img src={argos_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 23 && <img src={argos_bottom_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 24 && <img src={argos_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 25 && <img src={argos_top_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 26 && <img src={argos_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 27 && <img src={argos_bottom_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 28 && <img src={ambroselli_io_black_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 29 && <img src={ambroselli_io_black_top_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 30 && <img src={ambroselli_io_black_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 31 && <img src={ambroselli_io_black_bottom_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 32 && <img src={ambroselli_io_black_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 33 && <img src={ambroselli_io_black_top_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 34 && <img src={ambroselli_io_black_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 35 && <img src={ambroselli_io_black_bottom_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 36 && <img src={ambroselli_io_white_top_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 37 && <img src={ambroselli_io_white_top_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 38 && <img src={ambroselli_io_white_bottom_left} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 39 && <img src={ambroselli_io_white_bottom_left_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 40 && <img src={ambroselli_io_white_top_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 41 && <img src={ambroselli_io_white_top_right_small} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 42 && <img src={ambroselli_io_white_bottom_right} alt="pic"  onLoad={this.handleLoad} />}
-        {this.state.load === 43 && <img src={ambroselli_io_white_bottom_right_small} alt="pic"  onLoad={this.handleLoad} />}
-
+    return (
+      <div
+        className={``}
+        style={{ position: 'absolute', visibility: 'hidden', zIndex: -10 }}
+      >
+        {this.state.load === 0 && (
+          <img src={vernet_top_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 1 && (
+          <img src={vernet_top_left_small} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 2 && (
+          <img src={vernet_bottom_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 3 && (
+          <img
+            src={vernet_bottom_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 4 && (
+          <img src={vernet_top_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 5 && (
+          <img
+            src={vernet_top_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 6 && (
+          <img src={vernet_bottom_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 7 && (
+          <img
+            src={vernet_bottom_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 8 && (
+          <img src={brach_top_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 9 && (
+          <img src={brach_top_left_small} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 10 && (
+          <img src={brach_bottom_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 11 && (
+          <img
+            src={brach_bottom_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 12 && (
+          <img src={brach_top_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 13 && (
+          <img src={brach_top_right_small} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 14 && (
+          <img src={brach_bottom_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 15 && (
+          <img
+            src={brach_bottom_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 16 && (
+          <img src={adt_top_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 17 && (
+          <img src={adt_bottom_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 18 && (
+          <img src={adt_top_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 19 && (
+          <img src={adt_bottom_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 20 && (
+          <img src={argos_top_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 21 && (
+          <img src={argos_top_left_small} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 22 && (
+          <img src={argos_bottom_left} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 23 && (
+          <img
+            src={argos_bottom_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 24 && (
+          <img src={argos_top_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 25 && (
+          <img src={argos_top_right_small} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 26 && (
+          <img src={argos_bottom_right} alt="pic" onLoad={this.handleLoad} />
+        )}
+        {this.state.load === 27 && (
+          <img
+            src={argos_bottom_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 28 && (
+          <img
+            src={ambroselli_io_black_top_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 29 && (
+          <img
+            src={ambroselli_io_black_top_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 30 && (
+          <img
+            src={ambroselli_io_black_bottom_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 31 && (
+          <img
+            src={ambroselli_io_black_bottom_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 32 && (
+          <img
+            src={ambroselli_io_black_top_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 33 && (
+          <img
+            src={ambroselli_io_black_top_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 34 && (
+          <img
+            src={ambroselli_io_black_bottom_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 35 && (
+          <img
+            src={ambroselli_io_black_bottom_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 36 && (
+          <img
+            src={ambroselli_io_white_top_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 37 && (
+          <img
+            src={ambroselli_io_white_top_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 38 && (
+          <img
+            src={ambroselli_io_white_bottom_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 39 && (
+          <img
+            src={ambroselli_io_white_bottom_left_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 40 && (
+          <img
+            src={ambroselli_io_white_top_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 41 && (
+          <img
+            src={ambroselli_io_white_top_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 42 && (
+          <img
+            src={ambroselli_io_white_bottom_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 43 && (
+          <img
+            src={ambroselli_io_white_bottom_right_small}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 44 && (
+          <img
+            src={react_swipe_to_delete_ios_bottom_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 45 && (
+          <img
+            src={react_swipe_to_delete_ios_bottom_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 46 && (
+          <img
+            src={react_swipe_to_delete_ios_top_left}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
+        {this.state.load === 47 && (
+          <img
+            src={react_swipe_to_delete_ios_top_right}
+            alt="pic"
+            onLoad={this.handleLoad}
+          />
+        )}
       </div>
-    )
+    );
   }
 }
 
-LoadingPictures.propTypes = {
+LoadingPictures.propTypes = {};
 
-};
-
-LoadingPictures.defaultProps = {
-  
-}
+LoadingPictures.defaultProps = {};
 
 export default LoadingPictures;
