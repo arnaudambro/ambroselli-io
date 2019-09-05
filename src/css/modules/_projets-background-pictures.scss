@@ -48,6 +48,20 @@
     &.main__projets--pic-right-down {background-image: url(../img/projets/react-swipe-to-delete-ios/react-swipe-to-delete-ios-bottom-right.png) !important}
 }
 
+.adbuilder {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/adbuilder/adbuilder-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/adbuilder/adbuilder-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/adbuilder/adbuilder-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/adbuilder/adbuilder-bottom-right.png) !important}
+}
+
+.broadcast {
+    &.main__projets--pic-left-up {background-image: url(../img/projets/broadcast/broadcast-top-left.png) !important}
+    &.main__projets--pic-left-down {background-image: url(../img/projets/broadcast/broadcast-bottom-left.png) !important}
+    &.main__projets--pic-right-up {background-image: url(../img/projets/broadcast/broadcast-top-right.png) !important}
+    &.main__projets--pic-right-down {background-image: url(../img/projets/broadcast/broadcast-bottom-right.png) !important}
+}
+
 .ambroselli.black {
   @media all and (min-width: 1000px) {
     &.main__projets--pic-left-up {background-image: url(../img/projets/ambroselli-io/ambroselli-white-top-left.png) !important}

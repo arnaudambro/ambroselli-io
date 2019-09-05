@@ -2,9 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import pictures from '../data/pics';
-import ReactTimeout from 'react-timeout'
+import ReactTimeout from 'react-timeout';
 // import { CSSTransitionGroup } from 'react-transition-group';
-
 
 class Projets extends React.Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class Projets extends React.Component {
     this.state = {
       entering: true,
       overing: false,
-      leftMoving: true,
+      leftMoving: true
     };
 
     this.handleHover = this.handleHover.bind(this);
@@ -20,9 +19,9 @@ class Projets extends React.Component {
   }
 
   componentWillMount() {
-    const projetId = parseInt(this.props.match.params.id, 10)
-    this.setState({ projetId: projetId })
-    this.setState({ leftMoving: projetId % 2 === 0 })
+    const projetId = parseInt(this.props.match.params.id, 10);
+    this.setState({ projetId: projetId });
+    this.setState({ leftMoving: projetId % 2 === 0 });
   }
 
   handleHover(event) {
@@ -34,14 +33,16 @@ class Projets extends React.Component {
         toggle = true;
       }
     } else {
-      toggle = event.type === 'mouseenter'
+      toggle = event.type === 'mouseenter';
     }
     this.setState({ overing: toggle });
   }
 
   handleProjetClick(projet) {
     this.props.prepareProjet(true, false, projet);
-    this.props.setTimeout(() => {this.props.loadProjet(true, true, projet)}, 100);
+    this.props.setTimeout(() => {
+      this.props.loadProjet(true, true, projet);
+    }, 100);
   }
 
   componentDidMount() {
@@ -51,12 +52,7 @@ class Projets extends React.Component {
     }, this.props.durations * 1000);
   }
 
-
-
-
   render() {
-
-
     const { entering, overing, leftMoving, projetId } = this.state;
     const projet = Object.keys(pictures)[projetId];
 
@@ -68,18 +64,26 @@ class Projets extends React.Component {
     \*------------------------------------*/
 
     const mainProjetsStyle = {
-      '--transitionDuration': this.props.durations,
-    }
+      '--transitionDuration': this.props.durations
+    };
 
-    const mainProjetsHeroStyle = { 
-      overflow: `${(entering ? 'visible' : 'hidden')}` 
+    const mainProjetsHeroStyle = {
+      overflow: `${entering ? 'visible' : 'hidden'}`
     };
 
     const mainProjetsDescriptionStyle = {
-      opacity: `${entering ? 0 : (overing ? 1 : (window.matchMedia("(max-width: 1000px)").matches ? '' : 0))}`,
-      transform: `${overing 
-        ? (leftMoving ? 'translateX(-5vw)' : 'translateX(5vw)')
-        : (leftMoving ? 'translateX(0)' : 'translateX(0)')}`,
+      opacity: `${
+        entering
+          ? 0
+          : overing
+            ? 1
+            : window.matchMedia('(max-width: 1000px)').matches ? '' : 0
+      }`,
+      transform: `${
+        overing
+          ? leftMoving ? 'translateX(-5vw)' : 'translateX(5vw)'
+          : 'translateX(0)'
+      }`,
       margin: `${leftMoving ? '0 0 10vh 0' : '10vh 0 0 0'}`,
       top: `${!leftMoving ? '0' : 'auto'}`,
       right: `${!leftMoving ? '0' : 'auto'}`,
@@ -95,85 +99,109 @@ class Projets extends React.Component {
       direction: `${!leftMoving ? '' : 'rtl'}`
     };
 
-    const maskStyle = { 
-      display: `${(entering ? 'block' : 'none')}`
+    const maskStyle = {
+      display: `${entering ? 'block' : 'none'}`
     };
 
     /*------------------------------------*\
         CLASSES
     \*------------------------------------*/
 
-    const enterSeparated = (this.props.movingTransition === 'separated') && this.props.firstTime;
+    const enterSeparated =
+      this.props.movingTransition === 'separated' && this.props.firstTime;
 
-    const picTopLeftClasses = `main__projets--pic main__projets--pic-left-up ${enterSeparated ? 'enter-from-right ' : ''}`;
-    const picBottomLeftClasses = `main__projets--pic main__projets--pic-left-down ${enterSeparated ? 'enter-from-up ' : ''}`;
-    const picTopRightClasses = `main__projets--pic main__projets--pic-right-up ${enterSeparated ? 'enter-from-down ' : ''}`;
-    const picBottomRightClasses = `main__projets--pic main__projets--pic-right-down ${enterSeparated ? 'enter-from-left ' : ''}`;
+    const picTopLeftClasses = `main__projets--pic main__projets--pic-left-up ${
+      enterSeparated ? 'enter-from-right ' : ''
+    }`;
+    const picBottomLeftClasses = `main__projets--pic main__projets--pic-left-down ${
+      enterSeparated ? 'enter-from-up ' : ''
+    }`;
+    const picTopRightClasses = `main__projets--pic main__projets--pic-right-up ${
+      enterSeparated ? 'enter-from-down ' : ''
+    }`;
+    const picBottomRightClasses = `main__projets--pic main__projets--pic-right-down ${
+      enterSeparated ? 'enter-from-left ' : ''
+    }`;
 
     /*------------------------------------*\
         LAYOUT
     \*------------------------------------*/
 
-    return(
-      <div 
-        className="main main__projets" 
-        
-        style={mainProjetsStyle}>
-        <div 
+    const {
+      classes,
+      name,
+      urlType
+      // description
+    } = pictures[projet];
+
+    return (
+      <div className="main main__projets" style={mainProjetsStyle}>
+        <div
           className="main__projets--hero"
           style={mainProjetsHeroStyle}
           onMouseEnter={this.handleHover}
           onMouseOver={this.handleHover}
-          onMouseLeave={this.handleHover} >
-          <div 
-            className={`main__projets--left main__projets--content  ${overingLeftSide ? 'active' : ''} `}
-            style={{ pointerEvents: `${'auto'}`}}
-            onClick={() => this.handleProjetClick(projetId)}>
-              <div 
-                className={`${picTopLeftClasses}${pictures[`${projet}`].classes}${this.props.theme} ${leftMoving ? 'transit-from-left ' : 'transit-from-down '}`} >
-              </div>
-              <div 
-                className={`${picBottomLeftClasses}${pictures[`${projet}`].classes}${this.props.theme} ${leftMoving ? 'transit-from-left ' : 'transit-from-down '}`} >
-              </div>
+          onMouseLeave={this.handleHover}
+        >
+          <div
+            className={`main__projets--left main__projets--content  ${
+              overingLeftSide ? 'active' : ''
+            } `}
+            style={{ pointerEvents: 'auto' }}
+            onClick={() => this.handleProjetClick(projetId)}
+          >
+            <div
+              className={`${picTopLeftClasses}${classes}${this.props.theme} ${
+                leftMoving ? 'transit-from-left ' : 'transit-from-down '
+              }`}
+            />
+            <div
+              className={`${picBottomLeftClasses}${classes}${
+                this.props.theme
+              } ${leftMoving ? 'transit-from-left ' : 'transit-from-down '}`}
+            />
           </div>
-          <div  
-            className={`main__projets--right main__projets--content  ${overingRightSide ? 'active' : ''} `}
-            style={{ pointerEvents: `${'auto'}`}}
-            onClick={() => this.handleProjetClick(projetId)}>
-              <div  
-                className={`${picTopRightClasses}${pictures[`${projet}`].classes}${this.props.theme} ${leftMoving ? 'transit-from-up ' : 'transit-from-right '}`} >
-              </div>
-              <div 
-                className={`${picBottomRightClasses}${pictures[`${projet}`].classes}${this.props.theme} ${leftMoving ? 'transit-from-up ' : 'transit-from-right '}`} >
-              </div>
+          <div
+            className={`main__projets--right main__projets--content  ${
+              overingRightSide ? 'active' : ''
+            } `}
+            style={{ pointerEvents: `${'auto'}` }}
+            onClick={() => this.handleProjetClick(projetId)}
+          >
+            <div
+              className={`${picTopRightClasses}${classes}${this.props.theme} ${
+                leftMoving ? 'transit-from-up ' : 'transit-from-right '
+              }`}
+            />
+            <div
+              className={`${picBottomRightClasses}${classes}${
+                this.props.theme
+              } ${leftMoving ? 'transit-from-up ' : 'transit-from-right '}`}
+            />
           </div>
         </div>
-        <div 
+        <div
           className="main__projets--description"
           style={mainProjetsDescriptionStyle}
-          onClick={() => this.handleProjetClick(projetId)}>
-          <div className="title">{pictures[`${projet}`].name}</div>
-          {/*<div className="description" dangerouslySetInnerHTML={pictures[`${projet}`].description} ></div>*/}
-          <div className={`divider ${overing ? 'active' : ''}`}></div>
-          <div 
+          onClick={() => this.handleProjetClick(projetId)}
+        >
+          <div className="title">{name}</div>
+          {/*<div className="description" dangerouslySetInnerHTML={description} ></div>*/}
+          <div className={`divider ${overing ? 'active' : ''}`} />
+          <div
             className={`call-to-click ${overing ? 'active' : ''}`}
-            style={callToClickStyle}>Voir le site</div>
+            style={callToClickStyle}
+          >
+            {urlType === 'video' ? 'Voir la vidéo' : 'Voir le site'}
+          </div>
         </div>
 
-        <div 
-          className="main__projets--mask-center"
-          style={maskStyle} >
-        </div>
-
+        <div className="main__projets--mask-center" style={maskStyle} />
       </div>
-      )
+    );
   }
 }
 
-
-
-Projets.propTypes = {
-
-};
+Projets.propTypes = {};
 
 export default ReactTimeout(Projets);
